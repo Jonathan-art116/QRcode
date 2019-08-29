@@ -46,6 +46,7 @@ namespace QRcode
         private void QRcode_Load(object sender, EventArgs e)
         {
             Control.CheckForIllegalCrossThreadCalls = false;//不是很合理的做法
+            //查看CheckForIllegalCrossThreadCalls 这个属性的定义，就会发现它是一个static的，也就是说无论我们在项目的什么地方修改了这个值，他就会在全局起作用。而且像这种跨线程访问是否存在异常，我们通常都会去检查。如果项目中其他人修改了这个属性，那么我们的方案就失败了，我们要采取另外的方案。
             textBox1.Text = "";
             pictureBox1.Image = null;
             this.myTimer = new System.Timers.Timer(1000);

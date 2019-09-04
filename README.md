@@ -1,3 +1,3 @@
 # QRcode
 
-auto get QR code
+auto get ssid make QR code
